@@ -1,20 +1,20 @@
-﻿int SumDigit (string digit)
+﻿int SumDigit (int digit)
 {
-int leng = digit.Length;
-int num = int.Parse(digit);
+string temp = Convert.ToString (digit);
+int leng = temp.Length;
 
 int ost = 0;
 int sum = 0;
 
 for (int i=0; i < leng; i++)
 {
-    ost = num % 10;
-    num = num / 10;
+    ost = digit % 10;
+    digit = digit / 10;
     sum = sum + ost;
 }
 return sum;
 }
 
 Console.WriteLine ("Введите целое положительное число");
-string chislo = Console.ReadLine();
+int chislo = Convert.ToInt32 (Console.ReadLine());
 Console.WriteLine ("Сумма цифр в числе = "+SumDigit (chislo));
